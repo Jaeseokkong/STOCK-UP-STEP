@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Logo from "@/components/atoms/AppLogo";
-import NavigationMenu from "@/components/molecules/NavigationMenu";
-import Link from "next/link";
+import Header from "@/components/organisms/Header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,10 +28,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <header className="flex justify-evenly">
-            <Link href="/"> <Logo /> </Link> 
-            <NavigationMenu />
-        </header>
+        <Header />
         {children}
       </body>
     </html>
